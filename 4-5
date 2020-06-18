@@ -1,0 +1,41 @@
+Дола Павло, КI-18-2, ЛР 4-5
+1 рiвень
+public class Genericlist<T>  {
+    // вкладений клас також загальний для T.
+    private class Node       {
+        // T використано в незагальному конструкторі
+public Node(T t)
+        {   next = null;  data = t;   }
+        private Node next;
+        public Node Next   {   get { return next; }
+            set { next = value; }   }
+        private T data; // T як приватний член тип даних
+    public T Data // T як властивість,що повертає значення
+        {  get { return data; }  set { data = value; }
+        }    }
+    private Node head;
+    // конструктор
+    public Genericlist() 
+    {   head = null;   }
+    // T як тип-параметр методу:
+    public void Addhead(T t)   
+      {  Node n = new Node(t); n.Next = head; head = n;  }
+    public Ienumerator<T> Getenumerator()   {
+        Node current = head;
+        while (current != null)    {
+            yield return current.Data;
+            current = current.Next;   }
+    }    }
+class Testgenericlist  {
+    static void Main()
+    {   // int є аргументом-типом
+        Genericlist<int> list = new Genericlist<int>();
+        for (int x = 0; x < 10; x++)
+        {    list.Addhead(x);    }
+        foreach (int i in list)
+        {    System.Console.Write(i + " ");   }
+        System.Console.WriteLine("\ndone");
+    }   }
+
+
+
