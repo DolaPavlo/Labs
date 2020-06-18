@@ -1,0 +1,25 @@
+Дола Павло, КI-18-2, ЛР 2
+1 рiвень
+public class Basec 
+{
+    public class Nestedc 
+    {
+        public int x = 200;
+        public int y;
+    }
+}
+public class Derivedc : Basec   {
+    // Вкладений тип приховує члени базового типу 
+    new public class Nestedc    {
+        public int x = 100;
+        public int y; 
+        public int z;
+    }
+    static void Main()     {
+    // створення об’єкту з перекриттям класу:
+        Nestedc c1  = new Nestedc();
+        // створення об’єкта з прихованого класу:
+        Basec.Nestedc c2 = new Basec.Nestedc();
+        Console.WriteLine(c1.x);
+        Console.WriteLine(c2.x);
+    }    }
