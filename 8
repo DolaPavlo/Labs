@@ -1,0 +1,43 @@
+Дола Павло, КI-18-2, ЛР 8
+1 рiвень
+private void button3_Click(object sender, System.Eventargs e)
+{
+	int i =0;
+	foreach(object item in listbox2.Items)
+	{
+		selected_items[i] = (Book)item;
+		selected_items[i].Printbook();
+		i++;
+	}
+	this.Hide();
+}
+private void button4_Click(object sender, System.Eventargs e)
+{
+	Book book;
+	foreach(object item in listbox2.Items)
+	{
+		book = (Book)item;
+		book.Printbook();
+	}
+	this.Hide();
+}
+Клас Book визначений у такий спосіб:
+public class Book
+{
+	//поля
+	string author, title;
+	int price, year;
+	public Book(string a, string t, int p, int y)
+	{
+		author = a; title = t; price = p; year = y;
+	}
+	public override string Tostring()
+	{
+		return( title + " : " + author);
+	}
+	public void Printbook()
+	{
+		Debug.Writeline("автор:" + author + " назва: " + title + " ціна: " + price.Tostring() +" рік видання: " + year.Tostring());
+	}
+}
+
