@@ -1,0 +1,37 @@
+Дола Павло, КI-18-2, ЛР 1
+1 рiвень
+
+
+
+
+
+
+using System;
+namespace C_ConsoleInput   {
+  class Class1     {
+    [STAThread]
+    static void Main(string[] args)
+    {
+      // Запитімені користувача
+      Console.Write("Введіть імя і натисніть Enter: ");
+      // зчитування даних; присвоїти значення змінній "name"
+      string name = Console.ReadLine();
+      // "name" можна використовувати як звичну змінну
+      Console.WriteLine("Привіт, " + name + "!");
+      // запит 
+     Console.Write("Введіть назву піци і натисніть Enter:");
+      string pizza = Console.ReadLine();
+      // використання двох змінних
+      Console.WriteLine("Привіт, {0}! Одна {1} піца на
+                                   підході!", name, pizza);
+      // використання ReadLine() с числовими типами
+      Console.Write("Введіть свій вік і натніть Enter: ");
+      int age = Convert.ToInt32( Console.ReadLine() );
+      Console.Write("Введіть свій ріст і натисніть Enter 
+                       (можна використовувати дроби): ");
+     double height = Convert.ToDouble( Console.ReadLine() );
+   Console.WriteLine("Вам {0} років, а ріст {1}.", age, height);
+   Console.Write("Программа завершена. Натисніть "Enter"
+                                          для виходу...");
+      Console.ReadLine();
+    }  }  }
